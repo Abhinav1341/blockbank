@@ -86,16 +86,18 @@ const HomePage = () => {
             <div>
               {/* Content for each tab */}
               {activeTab === "Current Loan" && (
-                <p>Your current loan details...</p>
+               <div>
+                <LoanTable/>
+               </div>
               )}
               {activeTab === "Previous Loans" && (
-                <p>Your previous loan history...</p>
+               <div>
+               <LoanTable/>
+              </div>
               )}
 
               {activeTab === "Stats" && <States />}
-              {activeTab === "SHG Details" && (
-                <p>Details about the Self-Help Group (SHG)...</p>
-              )}
+              
               {activeTab === "Profile" && (
                 <div>
                   <Profile {...singleUser} />
