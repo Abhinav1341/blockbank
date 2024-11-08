@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Landing = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,13 +46,18 @@ const Landing = () => {
                 Affordable micro-loans designed to uplift individuals and small
                 businesses.
               </p>
-              <div className="flex flex-row gap-8">
-                <button className="bg-lightBlue text-slate-900 py-3 px-8 rounded-full font-semibold hover:bg-white hover:text-navbarBlue transition text-lg">
+              <div className="flex flex-row gap-8 align-baseline items-center">
+                <Link
+                  to={"/home"}
+                  className="bg-lightBlue text-slate-900 py-3 px-8 rounded-full font-semibold hover:bg-white hover:text-navbarBlue transition text-lg"
+                >
                   Get Started
-                </button>
-                <button className=" font-semibold underline">
-                  What is DeFi?
-                </button>
+                </Link>
+                <Link to={"/know_more"}>
+                  <button className=" font-semibold underline">
+                    What is DeFi?
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

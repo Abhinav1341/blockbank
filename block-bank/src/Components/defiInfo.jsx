@@ -1,5 +1,6 @@
 import React from "react";
 import ModuleCard from "./infoCard";
+import { Link } from "react-router-dom";
 
 const DeFiInfo = () => {
   return (
@@ -13,7 +14,7 @@ const Main = () => {
   return (
     <main className="px-12 py-8">
       <h2 className="text-5xl font-bold mb-8">
-        DeFi and Micro-loans Awareness
+        De-Fi and Micro-loans Awareness
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <ModuleCard
@@ -58,6 +59,14 @@ const Main = () => {
           description="Understand the role of DAOs in decentralized governance and decision-making."
           color="purple"
         />
+      </div>
+      <div className="mt-8">
+        <Link
+          className=" text-slate-50 bg-emerald-600 px-6 py-3 rounded-md"
+          to={"*"}
+        >
+          Back to Home Page
+        </Link>
       </div>
     </main>
   );
