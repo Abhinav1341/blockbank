@@ -7,6 +7,12 @@
 Our decentralized micro-lending platform leverages **Blockchain** and **Web3** technology to make financial services more accessible and affordable for underserved rural communities. By utilizing a **Self-Help Group (SHG)**-based lending system, we aim to provide low-interest loans, build financial literacy, and promote community-driven financial empowerment.
 
 ---
+## Deployed Link:
+
+### frontend: https://blockbank.vercel.app/
+### blockchain: https://yashrajdps13.github.io/BlocHost/
+
+---
 
 ## **Key Features**
 
