@@ -7,9 +7,10 @@ import { singleUser } from "./data";
 import KYC from "./profile/kyc";
 import NumberTicker from "../../components/number-ticker";
 import Loan from "./Loan";
+import LoanTable from "./loantable";
 
 const HomePage = () => {
-  const [activeTab, setActiveTab] = useState("SHG Details");
+  const [activeTab, setActiveTab] = useState("Current Loan");
   return (
     <div className="h-screen bg-[#f1f9f9] flex flex-col">
       {/* Main Content */}
@@ -83,16 +84,19 @@ const HomePage = () => {
           <div>
             {/* Content for each tab */}
             {activeTab === "Current Loan" && (
-              <p>Your current loan details...</p>
+              // <p>Your current loan details...</p>
+              <div>
+                <LoanTable/>
+              </div>
             )}
             {activeTab === "Previous Loans" && (
-              <p>Your previous loan history...</p>
+             <div>
+             <LoanTable/>
+           </div>
             )}
             
             {activeTab === "Stats" && <States />}
-            {activeTab === "SHG Details" && (
-              <p>Details about the Self-Help Group (SHG)...</p>
-            )}
+           
             {activeTab === "Profile" && (
               <div>
                 <Profile {...singleUser} />
