@@ -45,9 +45,14 @@ const Landing = () => {
                 Affordable micro-loans designed to uplift individuals and small
                 businesses.
               </p>
-              <button className="bg-lightBlue text-slate-900 py-3 px-8 rounded-full font-semibold hover:bg-white hover:text-navbarBlue transition text-lg">
-                Get Started
-              </button>
+              <div className="flex flex-row gap-8">
+                <button className="bg-lightBlue text-slate-900 py-3 px-8 rounded-full font-semibold hover:bg-white hover:text-navbarBlue transition text-lg">
+                  Get Started
+                </button>
+                <button className=" font-semibold underline">
+                  What is DeFi?
+                </button>
+              </div>
             </div>
           </div>
         </section>
