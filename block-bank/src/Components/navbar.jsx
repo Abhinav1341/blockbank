@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -23,11 +24,11 @@ const Navbar = () => {
           <h1 className="text-xl font-semibold">Block-Bank</h1>
         </div>
         <div className="flex gap-8">
-          <button className="hover:text-blue-200">Edit/Complete Profile</button>
-          <button className="hover:text-blue-200">Get Loan</button>
-          <button className="hover:text-blue-200">Your Wallet</button>
-          <button className="hover:text-blue-200">Review Credit Score</button>
-          <button className="hover:text-blue-200">LOGOUT</button>
+          <Link to={'/profile'} className="hover:text-blue-200">Edit/Complete Profile</Link>
+          <Link to={'/getloan'} className="hover:text-blue-200">Get Loan</Link>
+          <Link className="hover:text-blue-200">Your Wallet</Link>
+          <Link className="hover:text-blue-200">Review Credit Score</Link>
+          <Link className="hover:text-blue-200">LOGOUT</Link>
         </div>
       </div>
     </nav>
