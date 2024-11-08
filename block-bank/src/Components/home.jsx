@@ -2,6 +2,9 @@ import React, { useState, useEffect } from "react";
 import States from "./states/States";
 import PieChartBox from "./pieCartBox/PieChartBox";
 import Navbar from "./navbar";
+import Profile from "./profile/profile";
+import { singleUser } from "./data";
+import KYC from "./profile/kyc";
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("SHG Details");
@@ -51,6 +54,15 @@ const HomePage = () => {
               onClick={() => setActiveTab("SHG Details")}
             >
               SHG Details
+            </li> <li
+              className={`cursor-pointer p-2 ${
+                activeTab === "Profile"
+                  ? "text-blue-600 font-semibold"
+                  : "hover:bg-blue-100 hover:text-blue-600"
+              }`}
+              onClick={() => setActiveTab("Profile")}
+            >
+              Profile
             </li>
           </ul>
           {/* Credit Score Display */}
@@ -80,6 +92,12 @@ const HomePage = () => {
             {activeTab === "Stats" && <States />}
             {activeTab === "SHG Details" && (
               <p>Details about the Self-Help Group (SHG)...</p>
+            )}{activeTab === "Stats" && <States />}
+            {activeTab === "Profile" && (
+              <div   >
+                <Profile {...singleUser} />
+               
+              </div>
             )}
           </div>
         </div>
