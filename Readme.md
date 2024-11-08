@@ -82,16 +82,82 @@ Our platform **addresses financial exclusion** in rural districts by:
 
 ## **Screenshots**
 
+![Screenshot 2024-11-08 194145](https://github.com/user-attachments/assets/7c2e4796-59cd-4642-9861-38225b83b8a9)
+![Screenshot 2024-11-08 194208](https://github.com/user-attachments/assets/76df454a-0f84-488f-97d6-5a2650bef6fc)
+![Screenshot 2024-11-08 194325](https://github.com/user-attachments/assets/58bdc81e-8663-4bc8-9f17-486cc57e6427)
+![Screenshot 2024-11-08 194220](https://github.com/user-attachments/assets/4d0a809b-89e3-4f49-924c-4b0450ca42ea)
+![Screenshot 2024-11-08 194303](https://github.com/user-attachments/assets/3b1141a1-ec0c-4371-9acd-9be65bbcc2c3)
+
+
 
 ---
 
-## **Technologies Used**
 
-- **Blockchain** (for decentralized credit scoring)
-- **Web3** (for secure, peer-to-peer transactions)
-- **React.js** (Frontend Framework)
-- **Node.js** (Backend)
-- **IPFS** (Decentralized file storage)
+
+## Tech Stack
+
+### Frontend:
+- **ReactJS**: Used to build a dynamic and responsive user interface, ensuring a seamless experience for users accessing the platform.
+
+### Backend:
+- **Solidity**: Employed for smart contract development to handle blockchain-based processes such as loan management and credit scoring.
+
+### Web3 Integration:
+- **Web3.js**: Facilitates the connection between the frontend and blockchain, enabling wallet integration and secure transactions.
+
+### Other Tools:
+- **IPFS**: Decentralized storage system for user data and documents.
+- **Ethereum Blockchain**: Used for smart contracts and decentralized finance operations.
+
+## Features and Functionality
+
+### User Registration:
+- Users create accounts and connect Web3 wallets for authentication.
+
+### Loan Application:
+- Users can apply for loans based on their unique needs and credit score.
+
+### Credit Scoring:
+- Blockchain-based credit scoring evaluates users' trustworthiness, ensuring transparency in the lending process.
+
+### Loan Approval and Disbursement:
+- Smart contracts handle the approval process, ensuring low-interest loans with transparent terms.
+
+### Loan Management:
+- Users can view their loan history, outstanding balance, and repayment progress.
+
+### Educational Resources:
+- The platform offers learning modules on decentralized finance (DeFi) and community-based lending to help users understand blockchain-based financial systems.
+
+## Methodology and Process
+
+1. **User Registration**: 
+   - Users sign up on the platform and link their Web3 wallets to enable authentication.
+   
+2. **Loan Application**: 
+   - Users apply for loans by submitting their requirements and credit information.
+
+3. **Credit Scoring**: 
+   - The platform evaluates users' creditworthiness using blockchain-based scoring to maintain transparency and fairness.
+
+4. **Loan Approval and Disbursement**: 
+   - Smart contracts automatically approve loans based on pre-set conditions, ensuring fairness and security.
+
+5. **Loan Management**: 
+   - Users can track their loan details, including balance, interest rate, and repayment schedule.
+
+6. **Educational Resources**: 
+   - The platform provides educational resources to users about DeFi, blockchain, and community lending to encourage informed participation in the ecosystem.
+
+## Installation and Setup
+
+### Prerequisites:
+- Node.js and npm installed on your machine
+- MetaMask or other Web3 wallets for blockchain interaction
+- Ethereum testnet or mainnet environment
+
+
+
 
 ---
 
