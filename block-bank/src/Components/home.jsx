@@ -7,9 +7,10 @@ import { singleUser } from "./data";
 import KYC from "./profile/kyc";
 import NumberTicker from "../../components/number-ticker";
 import Loan from "./Loan";
+import LoanTable from "./loantable";
 
 const HomePage = () => {
-  const [activeTab, setActiveTab] = useState("SHG Details");
+  const [activeTab, setActiveTab] = useState("Current Loan");
   return (
     <>
       <Navbar />
