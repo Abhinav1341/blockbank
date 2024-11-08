@@ -13,12 +13,15 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed w-full z-10 top-0 text-black ${
+      className={`fixed w-full px-6 z-10 top-0 text-black ${
         isScrolled ? "bg-transparent" : "bg-blue-600"
       } transition-all duration-300`}
     >
       <div className="flex justify-between items-center px-8 py-4 text-white">
-        <h1 className="text-xl font-semibold">Block-Bank</h1>
+        <div className="flex gap-5 items-center">
+          <img src="/icon.png" className="h-8" />
+          <h1 className="text-xl font-semibold">Block-Bank</h1>
+        </div>
         <div className="flex gap-8">
           <button className="hover:text-blue-200">Edit/Complete Profile</button>
           <button className="hover:text-blue-200">Get Loan</button>
