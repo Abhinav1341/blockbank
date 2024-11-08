@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../navbar";
 
 function KYC() {
+ 
   const [userData, setUserData] = useState({
     name: "",
     mobile: "",
@@ -33,10 +35,11 @@ function KYC() {
       localStorage.setItem("userData", JSON.stringify(userData));
 
       // // Redirect to the Profile page
-      // navigate('/profile');
+      navigate('/profile');
     } else {
       alert("Please fill in all the fields and upload Aadhaar file");
     }
+   
   };
 
   return (
