@@ -5,6 +5,7 @@ import Navbar from "./navbar";
 import Profile from "./profile/profile";
 import { singleUser } from "./data";
 import KYC from "./profile/kyc";
+import Loan from "./Loan";
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("SHG Details");
@@ -45,7 +46,7 @@ const HomePage = () => {
             >
               Stats & Info
             </li>
-            <li
+            {/* <li
               className={`cursor-pointer p-2 ${
                 activeTab === "SHG Details"
                   ? "text-blue-600 font-semibold"
@@ -54,7 +55,8 @@ const HomePage = () => {
               onClick={() => setActiveTab("SHG Details")}
             >
               SHG Details
-            </li> <li
+            </li>  */}
+            {/* <li
               className={`cursor-pointer p-2 ${
                 activeTab === "Profile"
                   ? "text-blue-600 font-semibold"
@@ -63,7 +65,7 @@ const HomePage = () => {
               onClick={() => setActiveTab("Profile")}
             >
               Profile
-            </li>
+            </li> */}
           </ul>
           {/* Credit Score Display */}
           <div className="mt-8 text-lg text-gray-500">
@@ -89,16 +91,10 @@ const HomePage = () => {
             {activeTab === "Previous Loans" && (
               <p>Your previous loan history...</p>
             )}
+            
             {activeTab === "Stats" && <States />}
-            {activeTab === "SHG Details" && (
-              <p>Details about the Self-Help Group (SHG)...</p>
-            )}{activeTab === "Stats" && <States />}
-            {activeTab === "Profile" && (
-              <div   >
-                <Profile {...singleUser} />
-               
-              </div>
-            )}
+            {/* 
+             */}
           </div>
         </div>
       </div>

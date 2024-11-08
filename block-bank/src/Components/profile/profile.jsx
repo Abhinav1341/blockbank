@@ -196,11 +196,11 @@ const Profile = (props) => {
   }
 
   return (
-    <div className="single">
+    <div className="single gap-16 py-40 ">
       <div className="view">
         {/* User Details Section */}
         <div className="mt-4 space-y-4 px-10">
-          <h3 className="font-medium text-gray-700">User Details:</h3>
+          <h3 className="text-4xl font-bold text-center py-2 text-gray-700">User Details:</h3>
           
           {/* User Image Section */}
           <div className="flex justify-center mb-4">
@@ -270,8 +270,9 @@ const Profile = (props) => {
         )}
       </div>
 
+
       <div className="activities">
-        <h2>Latest Activities</h2>
+        <h2 className="text-4xl font-bold " >Latest Activities</h2>
         {props.activities && (
           <ul>
             {props.activities.map((activity) => (
