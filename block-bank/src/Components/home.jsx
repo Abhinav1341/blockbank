@@ -5,6 +5,7 @@ import Navbar from "./navbar";
 import Profile from "./profile/profile";
 import { singleUser } from "./data";
 import KYC from "./profile/kyc";
+import NumberTicker from "../../components/number-ticker";
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("SHG Details");
@@ -47,15 +48,6 @@ const HomePage = () => {
             </li>
             <li
               className={`cursor-pointer p-2 ${
-                activeTab === "SHG Details"
-                  ? "text-blue-600 font-semibold"
-                  : "hover:bg-blue-100 hover:text-blue-600"
-              }`}
-              onClick={() => setActiveTab("SHG Details")}
-            >
-              SHG Details
-            </li> <li
-              className={`cursor-pointer p-2 ${
                 activeTab === "Profile"
                   ? "text-blue-600 font-semibold"
                   : "hover:bg-blue-100 hover:text-blue-600"
@@ -66,10 +58,6 @@ const HomePage = () => {
             </li>
           </ul>
           {/* Credit Score Display */}
-          <div className="mt-8 text-lg text-gray-500">
-            Credit Score:{" "}
-            <span className="font-semibold text-green-500">720</span>
-          </div>
 
           <div className="pt-14">
             <PieChartBox />
@@ -92,11 +80,10 @@ const HomePage = () => {
             {activeTab === "Stats" && <States />}
             {activeTab === "SHG Details" && (
               <p>Details about the Self-Help Group (SHG)...</p>
-            )}{activeTab === "Stats" && <States />}
+            )}
             {activeTab === "Profile" && (
-              <div   >
+              <div>
                 <Profile {...singleUser} />
-               
               </div>
             )}
           </div>

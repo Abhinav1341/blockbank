@@ -5,9 +5,9 @@ import Navbar from "./Components/navbar";
 export default function App() {
   return (
     <>
-      {/* <Navbar />
-      <HomePage /> */}
-      <Landing />
+      <Navbar />
+      <HomePage />
+      {/* <Landing /> */}
     </>
   );
 }
