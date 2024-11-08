@@ -5,6 +5,7 @@ import Navbar from "./navbar";
 import Profile from "./profile/profile";
 import { singleUser } from "./data";
 import KYC from "./profile/kyc";
+import NumberTicker from "../../components/number-ticker";
 import Loan from "./Loan";
 
 const HomePage = () => {
@@ -68,10 +69,6 @@ const HomePage = () => {
             </li> */}
           </ul>
           {/* Credit Score Display */}
-          <div className="mt-8 text-lg text-gray-500">
-            Credit Score:{" "}
-            <span className="font-semibold text-green-500">720</span>
-          </div>
 
           <div className="pt-14">
             <PieChartBox />
@@ -93,8 +90,14 @@ const HomePage = () => {
             )}
             
             {activeTab === "Stats" && <States />}
-            {/* 
-             */}
+            {activeTab === "SHG Details" && (
+              <p>Details about the Self-Help Group (SHG)...</p>
+            )}
+            {activeTab === "Profile" && (
+              <div>
+                <Profile {...singleUser} />
+              </div>
+            )}
           </div>
         </div>
       </div>
