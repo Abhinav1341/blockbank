@@ -1,72 +1,90 @@
-import React from "react";
-import Navbar from "./navbar";
+import React, { useEffect, useState } from "react";
 
 const Landing = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const handleScroll = () => {
+    setIsScrolled(window.scrollY > 50);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
     <>
-      <div>
-        <Navbar />
-        <section className="pt-20 mt-14 h-[100svh] bg-navbarBlue text-white flex items-center justify-center py-24">
+      <div className=" bg-aquaWhite">
+        <nav
+          className={`fixed w-full px-6 z-20 top-0 text-black opacity-75 ${
+            isScrolled ? "bg-blue-700" : "bg-transparent"
+          } transition-all duration-300`}
+        >
+          <div className="flex justify-between items-center px-10 py-8 text-white">
+            <div className="flex gap-5 items-center">
+              <img src="/icon.png" className="h-10" />
+              <h1 className="text-2xl font-semibold">Block-Bank</h1>
+            </div>
+            <div className="flex gap-8"></div>
+          </div>
+        </nav>
+        <section
+          className="pt-20 h-[100svh] bg-navbarBlue text-white flex items-center justify-center py-24"
+          style={{
+            backgroundImage:
+              'linear-gradient(to right, rgba(10, 0, 90, 0.8), rgba(0, 0, 90, 0.1)), url("/landingBg.webp")',
+            backgroundSize: "cover",
+            backgroundPosition: "top right",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
           <div className="container mx-auto flex flex-col md:flex-row items-center md:items-stretch md:justify-between px-4">
-            {/* Left Side - Text */}
-            <div className="md:w-1/2 text-center md:text-left px-4">
-              <h1 className="text-4xl font-bold mb-4">
+            <div className="md:w-1/2 text-center md:text-left px-24 z-10">
+              <h1 className="text-5xl font-bold mb-6">
                 Empowering Growth through Micro Loans
               </h1>
-              <p className="text-lg mb-6">
+              <p className="text-xl mb-6">
                 Affordable micro-loans designed to uplift individuals and small
                 businesses.
               </p>
-              <button className="bg-lightBlue text-slate-900 py-3 px-8 rounded-full font-semibold hover:bg-white hover:text-navbarBlue transition">
+              <button className="bg-lightBlue text-slate-900 py-3 px-8 rounded-full font-semibold hover:bg-white hover:text-navbarBlue transition text-lg">
                 Get Started
               </button>
-            </div>
-
-            <div
-              className="md:w-1/2 h-full relative flex justify-center items-center overflow-hidden"
-              style={{
-                backgroundImage: 'url("/landingBg.webp")',
-                backgroundSize: "cover",
-                backgroundPosition: "center right",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <div className="absolute inset-0 bg-gradient-to-l from-navbarBlue opacity-80"></div>
             </div>
           </div>
         </section>
 
-        {/* Brief Overview */}
-        <section className="container mx-auto my-12 px-4 h-[80svh] text-center">
-          <h2 className="text-3xl font-bold text-navbarBlue mb-4">
+        <section className="container mx-auto my-20 px-4 h-[75svh] text-center">
+          <h2 className="text-4xl font-bold text-navbarBlue mb-4">
             How It Works
           </h2>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-xl text-gray-600 mb-8">
             Join our SHG platform, apply for loans, and grow with us!
           </p>
-          <div className="flex justify-around">
-            <div className="w-1/3 p-4">
-              <h3 className="text-xl font-semibold text-lightBlue">
-                1. Join a SHG
+          <div className="flex px-24 gap-8 justify-around">
+            <div className="w-1/3 h-[60svh] bg-white p-4 border items-center align-middle border-slate-400">
+              <h3 className="text-2xl mt-2 font-semibold text-lightBlue">
+                1. Join our SHG
               </h3>
-              <p className="text-gray-700">
+              <img src="/SHG.gif" className="h-2/3 m-auto mt-4" />
+              <p className="text-gray-700 text-lg">
                 Become part of our community to access resources and financial
                 support.
               </p>
             </div>
-            <div className="w-1/3 p-4">
-              <h3 className="text-xl font-semibold text-lightBlue">
+            <div className="w-1/3  h-[60svh] bg-white p-4 border border-slate-400">
+              <h3 className="text-2xl mt-2 font-semibold text-lightBlue">
                 2. Apply for a Loan
               </h3>
-              <p className="text-gray-700">
-                Submit your loan application with minimal paperwork.
+              <img src="/Apply.gif" className="h-2/3 m-auto mt-4" />
+              <p className="text-gray-700 text-lg">
+                Submit your loan application with just a few clicks.
               </p>
             </div>
-            <div className="w-1/3 p-4">
-              <h3 className="text-xl font-semibold text-lightBlue">
+            <div className="w-1/3  h-[60svh] bg-white p-4 border border-slate-400">
+              <h3 className="text-2xl mt-2 font-semibold text-lightBlue">
                 3. Receive Funding
               </h3>
-              <p className="text-gray-700">
+              <img src="/Get.gif" className="h-2/3 m-auto mt-4" />
+              <p className="text-gray-700 text-lg">
                 Get approved quickly and start using your funds for growth.
               </p>
             </div>
