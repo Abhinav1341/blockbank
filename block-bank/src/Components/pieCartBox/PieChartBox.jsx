@@ -1,23 +1,23 @@
 import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from "recharts";
 import "./pieChartBox.scss";
+import NumberTicker from "../../../components/number-ticker";
 
-const data = [
-  { name: "Mobile", value: 400, color: "#0088FE" },
-  { name: "Desktop", value: 300, color: "#00C49F" },
-  { name: "Laptop", value: 300, color: "#FFBB28" },
-  { name: "Tablet", value: 200, color: "#FF8042" },
-];
+const data = [{ name: "Credit Score", value: 720, color: "#047857" }];
 
 const PieChartBox = () => {
   return (
     <div className="pieChartBox py-2 ">
-      <h1 className="text-center" >Leads by Source</h1>
+      <h1 className="text-center text-2xl text-emerald-700">
+        Credit Score : <span />
+        <NumberTicker value={720} />
+      </h1>
       <div className="chart">
         <ResponsiveContainer width="99%" height={300}>
           <PieChart>
             <Tooltip
               contentStyle={{ background: "white", borderRadius: "5px" }}
             />
+
             <Pie
               data={data}
               innerRadius={"70%"}
@@ -31,17 +31,6 @@ const PieChartBox = () => {
             </Pie>
           </PieChart>
         </ResponsiveContainer>
-      </div>
-      <div className="options">
-        {data.map((item) => (
-          <div className="option pr-2 " key={item.name}>
-            <div className="title">
-              <div className="dot" style={{ backgroundColor: item.color }} />
-              <span>{item.name}</span>
-            </div>
-            <span>{item.value}</span>
-          </div>
-        ))}
       </div>
     </div>
   );
