@@ -70,6 +70,8 @@ contract CommunityLending {
         bool repaid;
     }
 
+    // event LoanCreated(uint indexed loanIndex, address indexed borrower, uint amount, uint interest, uint dueDate);
+
     mapping(address => User) public users;
     mapping(address => Loan[]) public loans;
     uint public communityFunds;
@@ -87,7 +89,7 @@ contract CommunityLending {
 
     // Lend money to a user
     // Lend money to a user
-    function lendMoney(address _borrower, uint _amount, uint _interest, uint _dueDate) public returns (uint) {
+    function lendMoney(address _borrower, uint _amount, uint _interest, uint _dueDate) public  {
         _amount *= 1 ether;
         _interest *= 1 ether;
         require(users[_borrower].wallet != address(0), "Borrower not registered");
@@ -104,7 +106,7 @@ contract CommunityLending {
         loans[_borrower].push(Loan(_borrower, _amount, _interest, _dueDate, false));
         users[_borrower].totalBorrowed += _amount;
 
-        return loans[_borrower].length - 1;
+        // uint loanIndex = loans[_borrower].length - 1;
     }
 
     // Repay loan
