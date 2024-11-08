@@ -2,7 +2,13 @@
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        navbarBlue: "#003366",
+        aquaWhite: "#e0f7f9",
+        lightBlue: "#66a3cc",
+      },
+    },
   },
   plugins: [],
 };
