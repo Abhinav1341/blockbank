@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Success from "./success";
 
 const Landing = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -71,8 +72,8 @@ const Landing = () => {
             Join our SHG platform, apply for loans, and grow with us!
           </p>
           <div className="flex px-24 gap-8 justify-around">
-            <div className="w-1/3 h-[60svh] bg-white p-4 border items-center align-middle border-slate-400">
-              <h3 className="text-2xl mt-2 font-semibold text-lightBlue">
+            <div className="w-1/3 h-[60svh] bg-white p-4 border items-center align-middle border-slate-400 cursor-pointer shadow-lg hover:shadow-xl ">
+              <h3 className="text-2xl mt-2 font-semibold text-emerald-600">
                 1. Join our SHG
               </h3>
               <img src="/SHG.gif" className="h-2/3 m-auto mt-4" />
@@ -81,8 +82,8 @@ const Landing = () => {
                 support.
               </p>
             </div>
-            <div className="w-1/3  h-[60svh] bg-white p-4 border border-slate-400">
-              <h3 className="text-2xl mt-2 font-semibold text-lightBlue">
+            <div className="w-1/3  h-[60svh] bg-white p-4 border border-slate-400 cursor-pointer shadow-lg hover:shadow-xl">
+              <h3 className="text-2xl mt-2 font-semibold text-emerald-600">
                 2. Apply for a Loan
               </h3>
               <img src="/Apply.gif" className="h-2/3 m-auto mt-4" />
@@ -90,8 +91,8 @@ const Landing = () => {
                 Submit your loan application with just a few clicks.
               </p>
             </div>
-            <div className="w-1/3  h-[60svh] bg-white p-4 border border-slate-400">
-              <h3 className="text-2xl mt-2 font-semibold text-lightBlue">
+            <div className="w-1/3  h-[60svh] bg-white p-4 border border-slate-400 cursor-pointer shadow-lg hover:shadow-xl">
+              <h3 className="text-2xl mt-2 font-semibold text-emerald-600">
                 3. Receive Funding
               </h3>
               <img src="/Get.gif" className="h-2/3 m-auto mt-4" />
@@ -103,13 +104,17 @@ const Landing = () => {
         </section>
 
         {/* Success Stories and Testimonials */}
-        <section className="bg-lightBlue h-[80svh] py-12">
+        <section className="bg-lightBlue h-[100svh] py-12">
           <div className="container mx-auto text-center text-navbarBlue">
-            <h2 className="text-3xl font-bold mb-4">Success Stories</h2>
-            <p className="text-lg text-white mb-8">
+            <h2 className="text-4xl text-white font-bold mb-4">
+              Success Stories
+            </h2>
+            <p className="text-xl text-slate-100 mb-8">
               See how our micro-loans have made a difference.
             </p>
-            <div className="flex justify-around">
+            <Success />
+            {/* <Marquee /> */}
+            {/* <div className="flex justify-around">
               <div className="w-1/3 p-4 bg-white rounded shadow-md">
                 <h3 className="text-xl font-semibold text-navbarBlue">
                   John's Small Business
@@ -126,11 +131,11 @@ const Landing = () => {
                   “I was able to purchase bulk stock and grow my customer base.”
                 </p>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
 
-        {/* Why Join a SHG */}
+        {/* Why Join a SHG
         <section className="container mx-auto h-[80svh] my-12 px-4 text-center">
           <h2 className="text-3xl font-bold text-navbarBlue mb-4">
             Why Join a SHG?
@@ -165,7 +170,7 @@ const Landing = () => {
               </p>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Footer */}
         <footer className="bg-navbarBlue text-white py-6">
