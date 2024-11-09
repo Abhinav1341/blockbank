@@ -39,7 +39,7 @@ const Navbar = () => {
           <Link to="/getloan" className="hover:text-gray-200 transition-colors">
             Get Loan
           </Link>
-          <Link to={"/dev/depositFunds"} className="hover:text-gray-200 transition-colors">
+          <Link to={"https://srivas-divyansh.github.io/BlocHost/"} target="_blank" className="hover:text-gray-200 transition-colors">
             Deposit
           </Link>
           <Link className="hover:text-gray-200 transition-colors">
