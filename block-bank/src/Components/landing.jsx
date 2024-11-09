@@ -71,7 +71,7 @@ const Landing = () => {
           <p className="md:text-xl text-sm text-gray-600 mb-8">
             Join our SHG platform, apply for loans, and grow with us!
           </p>
-          <div className="flex flex-col md:fkex-row px-24 gap-8 justify-around">
+          <div className="flex flex-col md:flex-row px-24 gap-8 justify-around">
             <div className="w-1/3 h-[60svh] bg-white p-4 border items-center align-middle border-slate-400 cursor-pointer shadow-lg hover:shadow-xl ">
               <h3 className="text-2xl mt-2 font-semibold text-emerald-600">
                 1. Join our SHG
