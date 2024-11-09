@@ -4,21 +4,16 @@ function LendMoney({state, account}) {
     const lend = async (event) => {
         event.preventDefault();
         const {contract} = state;
-        // const interest = document.getElementById('interest').value;
-        // const dueDate = document.getElementById('dueDate').value;
-        // console.log(document.getElementById('amount').innerText.length);
-        // console.log(document.getElementById('address').innerText.length);
-        // const amount = document.getElementById('amount').innerText;
-        // const address = document.getElementById('address').innerText;
-        // console.log(interest, dueDate, amount, address);
-        // console.log(amount);
-        // console.log(address);
-        // const amountInWei = parseInt(amount);
-        // const interestInWei = parseInt(interest);
-        // const dueDateTimestamp = parseInt(dueDate);
-        // console
-        console.log(account[0]);
-        const transaction = await contract.lendMoney(account[0], 0, 0, 2000);
+        const interest = document.getElementById('interests').value;
+        const dueDate = document.getElementById('dueDate').value;
+        const amount = document.getElementById('amounts').value;
+        // console.log(account[0]);
+        console.log(amount, interest, dueDate);
+        const amountInWei = ethers.parseEther(amount);
+        const interestInWei = ethers.parseEther(interest);
+        console.log(amountInWei);
+        console.log(interestInWei);
+        const transaction = await contract.lendMoney(account[0], amountInWei, interestInWei, dueDate);
         await transaction.wait();
         console.log('Money lent');
     }
@@ -26,15 +21,16 @@ function LendMoney({state, account}) {
     return (
         <div>
             <form onSubmit={lend}>
-                <label>Amount</label>
-                <input type="text" id="amount" name="amount" required />
+            <label>Amount</label>
+                <input type="text" id="amounts" name="amount" required />
+                <br />
                 <label>Interest</label>
-                <input type="text" id="interest" name="interest" required />
-                <label>Due Date</label>
+                <input type="text" id="interests" name="interest" required />
+                <br />
+                <label>Due Date (in days)</label>
                 <input type="text" id="dueDate" name="dueDate" required />
-                <label>Address</label>
-                <input type="text" id="address" name="address" required />
-                <button type="submit">Lend</button>
+                <br />
+                <button type="submit">Lend Money</button>
                 </form>
         </div>
     );

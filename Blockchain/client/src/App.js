@@ -3,6 +3,7 @@ import DepositFunds from './components/DepositFunds';
 import GetProfile from './components/GetProfile';
 import GetContractBalance from './components/GetContractBalance';
 import LendMoney from './components/LendMoney';
+import RepayLoan from './components/RepayLoan';
 import abi from './contract/CommunityLending.json';
 import {useState, useEffect} from 'react';
 const {ethers} = require('ethers');
@@ -15,7 +16,7 @@ function App() {
   const [account, setAccount] = useState(null);
   useEffect(() => {
     const connectWallet = async () => {
-      const contractAddress = "0xc4162Dd50A36E72dfA2e42423dC4c9f4435Ba4a1";
+      const contractAddress = "0x139B815e15bba57A17Ff9ef85F930B6AfDb52C8e";
       const contractAbi = abi.abi;
       try {
         const {ethereum} = window;
@@ -43,6 +44,7 @@ function App() {
       <GetProfile state={state} />
       <GetContractBalance state={state} />
       <LendMoney state={state} account={account}/>
+      <RepayLoan state={state} />
     </div>
   );
 }
