@@ -7,10 +7,10 @@ const config = {
       { widget: "options" }
     ),
   ],
-  botName: "LearningBot",
+  botName: "LoanBot",
   customStyles: {
-    botMessageBox: { backgroundColor: "#376B7E" },
-    chatButton: { backgroundColor: "#5ccc9d" },
+    botMessageBox: { backgroundColor: "#34d399" },
+    chatButton: { backgroundColor: "#34d399" },
   },
 };
 

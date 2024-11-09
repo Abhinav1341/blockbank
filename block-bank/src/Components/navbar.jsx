@@ -39,11 +39,11 @@ const Navbar = () => {
           <Link to="/getloan" className="hover:text-gray-200 transition-colors">
             Get Loan
           </Link>
-          <Link to={"/dev/depositFunds"} className="hover:text-gray-200 transition-colors">
-            Deposit
-          </Link>
-          <Link className="hover:text-gray-200 transition-colors">
-            Review Credit Score
+          <Link
+            to={"/dev/depositFunds"}
+            className="hover:text-gray-200 transition-colors"
+          >
+            Deposit Funds
           </Link>
           <Link className="hover:text-red-400 transition-colors">LOGOUT</Link>
         </div>
@@ -86,12 +86,7 @@ const Navbar = () => {
           >
             Your Wallet
           </Link>
-          <Link
-            className="hover:text-gray-200 transition-colors"
-            onClick={() => setIsMobileMenuOpen(false)}
-          >
-            Review Credit Score
-          </Link>
+
           <Link
             className="hover:text-red-400 transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
