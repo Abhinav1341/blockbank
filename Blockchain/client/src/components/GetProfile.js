@@ -45,6 +45,8 @@ function calculateInterestRate(creditScore, loanTermMonths) {
   return interestRate;
 }
 
+const creditS = calculateCreditScore(80, 70, 90, 60, 85);
+
 const GetProfile = ({ state }) => {
   const [profile, setProfile] = useState({
     address: "",
@@ -97,7 +99,7 @@ const GetProfile = ({ state }) => {
         <h2>Profile</h2>
         <p>Address: {profile[0]}</p>
         <p>Name: {profile[1]}</p>
-        <p>Credit Score: {profile[2] == null ? null : profile[2].toString()}</p>
+        <p>Credit Score: {profile[2] == null ? null : creditS}</p>
         <p>
           Total Borrowed: {profile[3] == null ? null : profile[3].toString()}
         </p>
