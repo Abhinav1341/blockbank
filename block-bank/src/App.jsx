@@ -7,6 +7,7 @@ import Loan from "./Components/Loan";
 import { singleUser } from "./Components/data";
 import DeFiInfo from "./Components/defiInfo";
 import LoanProcess from "./Components/loanprocess";
+import ChatLoan from "./Components/chatbot";
 
 export default function App() {
   return (
