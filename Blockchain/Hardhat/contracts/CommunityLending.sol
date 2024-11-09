@@ -1,25 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-    /* Repay the loan with due date    
-    function repayLoan(uint _loanIndex) public payable {
-        Loan storage loan = loans[msg.sender][_loanIndex];
-        require(!loan.repaid, "Loan already repaid");
-
-        // Check if the due date is crossed
-        if (block.timestamp > loan.dueDate) {
-            uint overdueDays = (block.timestamp - loan.dueDate) / 1 days;
-            uint additionalInterest = (loan.amount * 5 * overdueDays) / 1000; // 0.5% per day
-            loan.interest += additionalInterest;
-        }
-
-        require(msg.value >= loan.amount + loan.interest, "Insufficient repayment amount");
-
-        loan.repaid = true;
-        users[msg.sender].totalRepaid += loan.amount;
-        communityFunds += msg.value;
-    }
-    */
 
 contract CommunityLending {
     struct User {
@@ -43,6 +24,17 @@ contract CommunityLending {
     mapping(address => User) public users;
     mapping(address => Loan[]) public loans;
     uint public communityFunds;
+
+    mapping(uint => string) public idToString;
+
+    function checkStringMatch(uint _id, string memory input) public view returns (bool) {
+        // for (uint i = 0; i < idToString.length; i++) { // Assuming a maximum of 100 entries for simplicity
+            if (keccak256(abi.encodePacked(idToString[_id])) == keccak256(abi.encodePacked(input))) {
+                return true;
+            }
+        // }
+        return false;
+    }
 
     // Register a new user
     function registerUser(string memory _name) public {
