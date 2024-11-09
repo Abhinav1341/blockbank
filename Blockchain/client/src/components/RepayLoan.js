@@ -4,7 +4,8 @@ function RepayLoan({state}){
         event.preventDefault();
         const {contract} = state;
         const loanId = document.getElementById('loanId').value;
-        const transaction = await contract.repayLoan(parseInt(loanId), {value: ethers.parseEther('0')});
+        const amount = document.getElementById('amounts').value;
+        const transaction = await contract.repayLoan(parseInt(loanId), {value: ethers.parseEther(amount)});
         await transaction.wait();
         console.log('Loan repaid');
     }
@@ -13,6 +14,8 @@ function RepayLoan({state}){
             <form onSubmit={repay}>
                 <label>Loan ID</label>
                 <input type="text" id="loanId" name="loanId" required />
+                <label>Amount</label>
+                <input type="text" id="amounts" name="amount" required />
                 <button type="submit">Repay</button>
             </form>
         </div>
