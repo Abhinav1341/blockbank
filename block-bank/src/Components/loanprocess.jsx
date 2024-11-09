@@ -7,7 +7,7 @@ const LoanProcess = () => {
   const navigate = useNavigate();
 
   const handleGetDetails = () => {
-    window.open("/dev/loan", "_blank");
+    window.open("https://srivas-divyansh.github.io/BlocHost/", "_blank");
   };
 
   // Generate a random date within 7 days from today
