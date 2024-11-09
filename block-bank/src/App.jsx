@@ -6,6 +6,7 @@ import KYC from "./Components/profile/kyc";
 import Loan from "./Components/Loan";
 import { singleUser } from "./Components/data";
 import DeFiInfo from "./Components/defiInfo";
+import LoanProcess from "./Components/loanprocess";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/getloan" element={<Loan />} />
           <Route path="*" element={<Landing />} />
           <Route path="/know_more" element={<DeFiInfo />} />
+          <Route path="/loanprocess" element={<LoanProcess />} />
         </Routes>
       </BrowserRouter>
     </>

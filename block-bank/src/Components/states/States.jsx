@@ -14,6 +14,7 @@ const States = () => {
 
   return (
     <div>
+       <h1 className="text-2xl font-bold mb-4 text-center ">States</h1>
       <div className="home">
       {/* <div className="box box1">
         <TopBox />
