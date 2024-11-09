@@ -6,6 +6,10 @@ import Navbar from "./navbar";
 const LoanProcess = () => {
   const navigate = useNavigate();
 
+  const handleGetDetails = () => {
+    window.open("/dev/loan", "_blank");
+  };
+
   // Generate a random date within 7 days from today
   const generateRandomDate = () => {
     const today = new Date();
@@ -38,6 +42,16 @@ const LoanProcess = () => {
           <p className="text-lg text-blue-700">{formattedDate}</p>
           <p className="text-sm text-gray-500">{dayOfWeek}</p>
         </div>
+
+
+        <div className="flex justify-center mt-6">
+        <button
+          onClick={handleGetDetails}
+          className="px-6 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600 transition duration-200"
+        >
+          Get Details
+        </button>
+      </div>
       </div>
     </div></>
   );

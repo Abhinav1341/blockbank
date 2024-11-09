@@ -19,7 +19,7 @@ const HomePage = () => {
   const [activeTab, setActiveTab] = useState("Current Loan");
 
   const handleGetDetails = () => {
-    window.open("https://yashrajdps13.github.io/BlocHost/", "_blank");
+    window.open("/dev/getInfo", "_blank");
   };
 
   const renderContent = () => {

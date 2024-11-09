@@ -69,7 +69,7 @@ const LoanTable = () => {
   ];
 
   const handleViewDetails = () => {
-    window.open("https://yashrajdps13.github.io/BlocHost/", "_blank");
+    window.open("/dev/loanDetails", "_blank");
   };
 
   return (
