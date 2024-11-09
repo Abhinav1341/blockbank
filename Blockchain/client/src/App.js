@@ -10,6 +10,7 @@ import abi from "./contract/CommunityLending.json";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
 import GeneralInfo from "./components/GeneralInfo";
+import Navbar from "./components/navbar";
 const { ethers, BrowserProvider } = require("ethers");
 function App() {
   const [state, setState] = useState({
@@ -49,6 +50,7 @@ function App() {
   // console.log(account);
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<RegisterUser state={state} />} />
         <Route

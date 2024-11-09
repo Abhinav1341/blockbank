@@ -32,7 +32,7 @@ const Landing = () => {
           className="pt-20 h-[100svh] bg-emerald-800 text-white flex items-center justify-center py-24"
           style={{
             backgroundImage:
-              'linear-gradient(to right, rgba(0, 30, 3, 0.8), rgba(0, 30, 2, 0.1)), url("/landingBg.webp")',
+              'linear-gradient(to right, rgba(0, 30, 3, 0.8), rgba(0, 30, 2, 0.1)), url("/landingBg.jpg")',
             backgroundSize: "cover",
             backgroundPosition: "top right",
             backgroundRepeat: "no-repeat",
