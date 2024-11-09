@@ -25,7 +25,7 @@ function GetLoans({ state }) {
   };
 
   return (
-    <div className="flex flex-col gap-3 p-4 border border-slate-400 bg-gray-200 m-auto mt-4 w-1/3 items-center shadow-md">
+    <div className="flex flex-col gap-3 p-4 border border-slate-400 bg-gray-200 m-auto mt-4 w-1/2 items-center shadow-md">
       <form
         className="text-lg flex w-3/4 flex-col align-middle items-center"
         onSubmit={fetchLoans}

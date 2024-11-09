@@ -33,7 +33,7 @@ const Loan = () => {
     <Navbar />
       <div className="flex justify-center py-28 items-center min-h-screen bg-gray-100">
         <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-          <h2 className="text-2xl font-semibold mb-6 text-center text-blue-700">
+          <h2 className="text-2xl font-semibold mb-6 text-center text-green-700">
             Loan Issuance Form
           </h2>
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -121,7 +121,7 @@ const Loan = () => {
 
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md shadow hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="w-full py-2 px-4 bg-green-600 text-white font-semibold rounded-md shadow hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               Submit
             </button>

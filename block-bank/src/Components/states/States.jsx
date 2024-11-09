@@ -15,9 +15,7 @@ import BarChartBox from "../barChartBox/BarChartBox";
 import "./states.scss";
 
 const States = () => {
-  const handleGetDetails = () => {
-    window.open("https://yashrajdps13.github.io/BlocHost/", "_blank");
-  };
+ 
 
   return (
     <div>
@@ -60,14 +58,7 @@ const States = () => {
       </div>
 
       {/* Get Details Button */}
-      <div className="flex justify-center mt-6">
-        <button
-          onClick={handleGetDetails}
-          className="px-6 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition duration-200"
-        >
-          Get Details
-        </button>
-      </div>
+     
     </div>
   );
 };
