@@ -4,7 +4,7 @@ function RepayLoan({ state }) {
     event.preventDefault();
     const { contract } = state;
     const loanId = document.getElementById("loanId").value;
-    const amount = document.getElementById("amounts").value;
+    const amount = document.getElementById("amoun").value;
     const transaction = await contract.repayLoan(parseInt(loanId), {
       value: ethers.parseEther(amount),
     });
@@ -32,8 +32,8 @@ function RepayLoan({ state }) {
           <input
             className="border border-gray-500 pl-2 py-1"
             type="text"
-            id="amounts"
-            name="amount"
+            id="amoun"
+            name="amounts"
             required
           />
         </div>
