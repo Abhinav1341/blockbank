@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FaCheckCircle } from "react-icons/fa"; // Importing check icon
+import Navbar from "./navbar";
 
 const LoanProcess = () => {
   const navigate = useNavigate();
@@ -19,6 +20,8 @@ const LoanProcess = () => {
   const formattedDate = randomDate.toLocaleDateString();
 
   return (
+   <>
+   <Navbar />
     <div className="min-h-screen bg-gray-100 flex justify-center items-center">
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
         <div className="flex items-center justify-center mb-6">
@@ -36,7 +39,7 @@ const LoanProcess = () => {
           <p className="text-sm text-gray-500">{dayOfWeek}</p>
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 
