@@ -83,9 +83,8 @@ const Navbar = () => {
           <Link className="hover:text-gray-200 transition-colors">
             Review Credit Score
           </Link>
-          <Link className="hover:text-red-400 transition-colors">
-            LOGOUT
-          </Link>
+          <Link className="hover:text-gray-200 transition-colors">Chatbot</Link>
+          <Link className="hover:text-red-400 transition-colors">LOGOUT</Link>
         </div>
         <div className="md:hidden flex items-center">
           <button className="text-white focus:outline-none">
@@ -111,4 +110,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
