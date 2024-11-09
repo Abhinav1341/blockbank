@@ -1,3 +1,7 @@
+
+
+
+
 import React from "react";
 import { FaCheckCircle, FaTimesCircle } from "react-icons/fa";
 
@@ -22,29 +26,32 @@ const LoanTable = () => {
 
   return (
     <div className="container mx-auto px-4">
-      <h1 className="text-2xl font-bold mb-4 text-center ">Loan Data</h1>
-      <table className="w-full bg-white border border-gray-300 rounded-lg shadow-md">
-        <thead>
-          <tr className="bg-gray-100">
-            <th className="py-3 px-6 text-left font-semibold border-b border-gray-200">Loan Amount</th>
-            <th className="py-3 px-6 text-left font-semibold border-b border-gray-200">Interest (%)</th>
-            <th className="py-3 px-6 text-left font-semibold border-b border-gray-200">Created Date</th>
-            <th className="py-3 px-6 text-left font-semibold border-b border-gray-200">Due Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          {loanData.map((loan) => (
-            <tr key={loan.id} className="hover:bg-gray-50">
-              <td className="py-3 px-6 border-b border-gray-200">₹{loan.loanAmount.toLocaleString()}</td>
-              <td className="py-3 px-6 border-b border-gray-200">{loan.interest}%</td>
-              <td className="py-3 px-6 border-b border-gray-200">{loan.createdDate}</td>
-              <td className="py-3 px-6 border-b border-gray-200">{loan.dueDate}</td>
+      <h1 className="text-2xl font-bold mb-4 text-center">Loan Data</h1>
+      <div className="overflow-x-auto"> {/* Make table horizontally scrollable on small screens */}
+        <table className="w-full bg-white border border-gray-300 rounded-lg shadow-md table-auto">
+          <thead>
+            <tr className="bg-gray-100">
+              <th className="py-3 px-6 text-left font-semibold border-b border-gray-200">Loan Amount</th>
+              <th className="py-3 px-6 text-left font-semibold border-b border-gray-200">Interest (%)</th>
+              <th className="py-3 px-6 text-left font-semibold border-b border-gray-200">Created Date</th>
+              <th className="py-3 px-6 text-left font-semibold border-b border-gray-200">Due Date</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {loanData.map((loan) => (
+              <tr key={loan.id} className="hover:bg-gray-50">
+                <td className="py-3 px-6 border-b border-gray-200">₹{loan.loanAmount.toLocaleString()}</td>
+                <td className="py-3 px-6 border-b border-gray-200">{loan.interest}%</td>
+                <td className="py-3 px-6 border-b border-gray-200">{loan.createdDate}</td>
+                <td className="py-3 px-6 border-b border-gray-200">{loan.dueDate}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
 
 export default LoanTable;
+
