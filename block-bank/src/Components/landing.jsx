@@ -71,8 +71,8 @@ const Landing = () => {
           <p className="md:text-xl text-sm text-gray-600 mb-8">
             Join our SHG platform, apply for loans, and grow with us!
           </p>
-          <div className="flex flex-col md:flex-row px-24 gap-8 justify-around">
-            <div className="w-1/3 h-[60svh] bg-white p-4 border items-center align-middle border-slate-400 cursor-pointer shadow-lg hover:shadow-xl ">
+          <div className="flex flex-col md:flex-row px-4 md:px-24 gap-4 md:gap-8 justify-around">
+            <div className=" md:w-1/3 h-[60svh] bg-white p-4 border items-center align-middle border-slate-400 cursor-pointer shadow-lg hover:shadow-xl ">
               <h3 className="text-2xl mt-2 font-semibold text-emerald-600">
                 1. Join our SHG
               </h3>
@@ -82,7 +82,7 @@ const Landing = () => {
                 support.
               </p>
             </div>
-            <div className="w-1/3  h-[60svh] bg-white p-4 border border-slate-400 cursor-pointer shadow-lg hover:shadow-xl">
+            <div className=" md:w-1/3  h-[60svh] bg-white p-4 border border-slate-400 cursor-pointer shadow-lg hover:shadow-xl">
               <h3 className="text-2xl mt-2 font-semibold text-emerald-600">
                 2. Apply for a Loan
               </h3>
@@ -91,7 +91,7 @@ const Landing = () => {
                 Submit your loan application with just a few clicks.
               </p>
             </div>
-            <div className="w-1/3  h-[60svh] bg-white p-4 border border-slate-400 cursor-pointer shadow-lg hover:shadow-xl">
+            <div className=" md:w-1/3  h-[60svh] bg-white p-4 border border-slate-400 cursor-pointer shadow-lg hover:shadow-xl">
               <h3 className="text-2xl mt-2 font-semibold text-emerald-600">
                 3. Receive Funding
               </h3>
@@ -104,7 +104,7 @@ const Landing = () => {
         </section>
 
         {/* Success Stories and Testimonials */}
-        <section className="bg-emerald-700 h-[100svh] py-12">
+        <section className="bg-emerald-700 h-[115svh] md:h-[100svh] py-12">
           <div className="container mx-auto text-center text-navbarBlue">
             <h2 className="text-4xl text-white font-bold mb-4">
               Success Stories
