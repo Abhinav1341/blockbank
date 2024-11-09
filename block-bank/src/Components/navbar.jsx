@@ -26,13 +26,16 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
-        <Link to="/home">
+        <Link to="*">
           <div className="flex items-center gap-3">
             <img src="/icon.png" alt="Logo" className="h-10" />
             <h1 className="text-2xl font-bold text-white">Block-Bank</h1>
           </div>
         </Link>
         <div className="hidden md:flex gap-6 text-sm font-medium">
+          <Link to="/home" className="hover:text-gray-200 transition-colors">
+            Home
+          </Link>
           <Link to="/profile" className="hover:text-gray-200 transition-colors">
             Edit/Complete Profile
           </Link>
@@ -40,7 +43,8 @@ const Navbar = () => {
             Get Loan
           </Link>
           <Link
-            to={"/dev/depositFunds"}
+            to={"https://srivas-divyansh.github.io/BlocHost"}
+            target="_blank"
             className="hover:text-gray-200 transition-colors"
           >
             Deposit Funds
@@ -67,6 +71,13 @@ const Navbar = () => {
       {isMobileMenuOpen && (
         <div className="md:hidden bg-green-600 text-white flex flex-col items-center py-4 gap-4">
           <Link
+            to="/home"
+            className="hover:text-gray-200 transition-colors"
+            onClick={() => setIsMobileMenuOpen(false)} // Close menu when link is clicked
+          >
+            Home
+          </Link>
+          <Link
             to="/profile"
             className="hover:text-gray-200 transition-colors"
             onClick={() => setIsMobileMenuOpen(false)} // Close menu when link is clicked
@@ -84,7 +95,7 @@ const Navbar = () => {
             className="hover:text-gray-200 transition-colors"
             onClick={() => setIsMobileMenuOpen(false)}
           >
-            Your Wallet
+            Deposit Funds
           </Link>
 
           <Link

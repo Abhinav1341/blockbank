@@ -16,7 +16,7 @@ const HomePage = () => {
   const [activeTab, setActiveTab] = useState("Current Loan");
 
   const handleGetDetails = () => {
-    window.open("/dev/getInfo", "_blank");
+    window.open("https://srivas-divyansh.github.io/BlocHost/", "_blank");
   };
 
   const renderContent = () => {
