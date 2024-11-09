@@ -1,13 +1,17 @@
 import RegisterUser from "./components/RegisterUser";
 import DepositFunds from "./components/DepositFunds";
-import GetProfile from "./components/GetProfile";
-import GetContractBalance from "./components/GetContractBalance";
-import LendMoney from "./components/LendMoney";
-import RepayLoan from "./components/RepayLoan";
+// import GetProfile from "./components/GetProfile";
+// import GetContractBalance from "./components/GetContractBalance";
+// import LendMoney from "./components/LendMoney";
+// import RepayLoan from "./components/RepayLoan";
+import Loan from "./components/Loan";
 import LoanInfo from "./components/LoanInfo";
 import abi from "./contract/CommunityLending.json";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState, useEffect } from "react";
-const { ethers } = require("ethers");
+import GeneralInfo from "./components/GeneralInfo";
+import Navbar from "./components/navbar";
+const { ethers, BrowserProvider } = require("ethers");
 function App() {
   const [state, setState] = useState({
     provider: null,
@@ -45,15 +49,24 @@ function App() {
   }, []);
   // console.log(account);
   return (
-    <div className="App py-6">
-      <RegisterUser state={state} />
-      <DepositFunds state={state} />
-      <GetProfile state={state} />
-      <GetContractBalance state={state} />
-      <LendMoney state={state} account={account} />
-      <RepayLoan state={state} />
-      <LoanInfo state={state} />
-    </div>
+    <BrowserRouter>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<RegisterUser state={state} />} />
+        <Route
+          path="/loan"
+          element={<Loan state={state} account={account} />}
+        />
+        <Route path="/depositFunds" element={<DepositFunds state={state} />} />
+        <Route path="/getInfo" element={<GeneralInfo state={state} />} />
+        <Route path="/loanDetails" element={<LoanInfo state={state} />} />
+
+        {/* <GetProfile state={state} />
+          <GetContractBalance state={state} /> */}
+        {/* <LendMoney state={state} account={account} />
+          <RepayLoan state={state} /> */}
+      </Routes>
+    </BrowserRouter>
   );
 }
 
