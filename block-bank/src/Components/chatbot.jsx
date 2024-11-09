@@ -1,7 +1,13 @@
 import React from "react";
 
 const Chatbot = () => {
-  return <div>Chatbot</div>;
+  return (
+    <Chatbot
+      config={config}
+      messageParser={MessageParser}
+      actionProvider={ActionProvider}
+    />
+  );
 };
 
 export default Chatbot;
