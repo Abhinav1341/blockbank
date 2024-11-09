@@ -9,9 +9,16 @@ import { singleUser } from "./data";
 import LoanTable from "./loantable";
 import PrevLoanTable from "./previousloan";
 import { FaHome, FaChartPie, FaUserAlt, FaFileInvoice } from 'react-icons/fa'; // Import icons
+import { GiTakeMyMoney } from "react-icons/gi";
+import { RiBankCardFill } from "react-icons/ri";
+
 
 const HomePage = () => {
   const [activeTab, setActiveTab] = useState("Current Loan");
+
+  const handleGetDetails = () => {
+    window.open("https://yashrajdps13.github.io/BlocHost/", "_blank");
+  };
 
   const renderContent = () => {
     switch (activeTab) {
@@ -21,8 +28,17 @@ const HomePage = () => {
         return <PrevLoanTable />;
       case "Stats":
         return <States />;
-      // case "Profile":
-      //   return <Profile {...singleUser} />;
+      case "get-details":
+        return <>
+         <div className="flex justify-center mt-6">
+        <button
+          onClick={handleGetDetails}
+          className="px-6 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600 transition duration-200"
+        >
+          Get Details
+        </button>
+      </div>
+        </>;
       default:
         return null;
     }
@@ -41,7 +57,7 @@ const HomePage = () => {
                 className={`cursor-pointer p-3 rounded-md flex items-center justify-start space-x-3 hover:bg-green-200 group`}
                 onClick={() => setActiveTab("Current Loan")}
               >
-                <FaFileInvoice className="text-xl" />
+                <GiTakeMyMoney className="text-xl" />
                 {/* Text is hidden on mobile */}
                 <span className="hidden sm:inline-block ml-3">Current Loan</span>
               </li>
@@ -49,7 +65,7 @@ const HomePage = () => {
                 className={`cursor-pointer p-3 rounded-md flex items-center justify-start space-x-3 hover:bg-green-200 group`}
                 onClick={() => setActiveTab("Previous Loans")}
               >
-                <FaFileInvoice className="text-xl" />
+                <RiBankCardFill className="text-xl" />
                 {/* Text is hidden on mobile */}
                 <span className="hidden sm:inline-block ml-3">Previous Loan Details</span>
               </li>
@@ -60,6 +76,13 @@ const HomePage = () => {
                 <FaChartPie className="text-xl" />
                 {/* Text is hidden on mobile */}
                 <span className="hidden sm:inline-block ml-3">Stats & Info</span>
+              </li> <li
+                className={`cursor-pointer p-3 rounded-md flex items-center justify-start  hover:bg-green-200 group`}
+                onClick={() => setActiveTab("get-details")}
+              >
+                <FaChartPie className="text-xl" />
+                {/* Text is hidden on mobile */}
+                <span className="hidden sm:inline-block ml-3">Get Details</span>
               </li>
             
             </ul>
