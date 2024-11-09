@@ -1,5 +1,3 @@
-
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa"; // Import React Icons
@@ -47,9 +45,7 @@ const Navbar = () => {
           <Link className="hover:text-gray-200 transition-colors">
             Review Credit Score
           </Link>
-          <Link className="hover:text-red-400 transition-colors">
-            LOGOUT
-          </Link>
+          <Link className="hover:text-red-400 transition-colors">LOGOUT</Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -109,5 +105,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
