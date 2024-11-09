@@ -1,38 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
-// Uncomment this line to use console.log
-// import "hardhat/console.sol";
-
-// contract Lock {
-//     uint public unlockTime;
-//     address payable public owner;
-
-//     event Withdrawal(uint amount, uint when);
-
-//     constructor(uint _unlockTime) payable {
-//         require(
-//             block.timestamp < _unlockTime,
-//             "Unlock time should be in the future"
-//         );
-
-//         unlockTime = _unlockTime;
-//         owner = payable(msg.sender);
-//     }
-
-//     function withdraw() public {
-//         // Uncomment this line, and the import of "hardhat/console.sol", to print a log in your terminal
-//         // console.log("Unlock time is %o and block timestamp is %o", unlockTime, block.timestamp);
-
-//         require(block.timestamp >= unlockTime, "You can't withdraw yet");
-//         require(msg.sender == owner, "You aren't the owner");
-
-//         emit Withdrawal(address(this).balance, block.timestamp);
-
-//         owner.transfer(address(this).balance);
-//     }
-// }
-
     /* Repay the loan with due date    
     function repayLoan(uint _loanIndex) public payable {
         Loan storage loan = loans[msg.sender][_loanIndex];
@@ -87,11 +55,15 @@ contract CommunityLending {
         return users[_wallet];
     }
 
+    function getLoans(address _borrower) public view returns (Loan[] memory) {
+        return loans[_borrower];
+    }
+
     // Lend money to a user
     // Lend money to a user
-    function lendMoney(address _borrower, uint _amount, uint _interest, uint _dueDate) public  {
-        _amount *= 1 ether;
-        _interest *= 1 ether;
+    function lendMoney(address _borrower, uint _amount, uint _interest, uint _dueDate) public {
+        // _amount *= 1 ether;
+        // _interest *= 1 ether;
         require(users[_borrower].wallet != address(0), "Borrower not registered");
         require(users[_borrower].creditScore >= 50, "Borrower has low credit score");
         require(address(this).balance >= _amount, "Insufficient community funds");
@@ -120,16 +92,7 @@ contract CommunityLending {
         communityFunds += msg.value;
     }
 
-    // Calculate credit score
-    function calculateCreditScore(address _user) public {
-        User storage user = users[_user];
-        if (user.totalBorrowed == 0) {
-            user.creditScore = 100;
-        } else {
-            user.creditScore = (user.totalRepaid * 100) / user.totalBorrowed;
-        }
-    }
-
+    
     // Function to check the balance of the funds stored in the smart contract
     function getContractBalance() public view returns (uint) {
         return address(this).balance;
@@ -141,7 +104,7 @@ contract CommunityLending {
     }
 
     // Withdraw funds from the community pool
-    function withdrawFunds(uint _amount) public {
+    function withdrawFunds(uint _amount) public payable {
         require(communityFunds >= _amount, "Insufficient community funds");
         communityFunds -= _amount;
         payable(msg.sender).transfer(_amount);
