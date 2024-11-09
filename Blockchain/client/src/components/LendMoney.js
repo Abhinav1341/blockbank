@@ -25,6 +25,7 @@ function LendMoney({ state, account }) {
 
   return (
     <div className="flex flex-col gap-3 p-4 border border-slate-400 bg-gray-200 m-auto mt-4 w-1/3 items-center shadow-md">
+      <h1 className="text-2xl font-semibold">Get Loan</h1>
       <form
         className="text-lg gap-2 flex flex-col align-middle items-center"
         onSubmit={lend}

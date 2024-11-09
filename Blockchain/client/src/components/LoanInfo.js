@@ -26,11 +26,12 @@ function GetLoans({ state }) {
 
   return (
     <div className="flex flex-col gap-3 p-4 border border-slate-400 bg-gray-200 m-auto mt-4 w-1/2 items-center shadow-md">
+      <h1 className="text-2xl font-bold">Get Loan History</h1>
       <form
         className="text-lg flex w-3/4 flex-col align-middle items-center"
         onSubmit={fetchLoans}
       >
-        <label>Address</label>
+        <label>Wallet Address</label>
         <input
           type="text"
           className="border border-gray-500 pl-2 py-1"
