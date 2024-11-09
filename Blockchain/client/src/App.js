@@ -4,6 +4,7 @@ import GetProfile from './components/GetProfile';
 import GetContractBalance from './components/GetContractBalance';
 import LendMoney from './components/LendMoney';
 import RepayLoan from './components/RepayLoan';
+import LoanInfo from './components/LoanInfo';
 import abi from './contract/CommunityLending.json';
 import {useState, useEffect} from 'react';
 const {ethers} = require('ethers');
@@ -45,6 +46,7 @@ function App() {
       <GetContractBalance state={state} />
       <LendMoney state={state} account={account}/>
       <RepayLoan state={state} />
+      <LoanInfo state={state} />
     </div>
   );
 }
