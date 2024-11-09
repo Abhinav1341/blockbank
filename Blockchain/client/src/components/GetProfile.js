@@ -1,5 +1,50 @@
 import { useState, useEffect } from "react";
 
+function calculateCreditScore(
+  repHistory,
+  incomeStability,
+  shgParticipation,
+  transactionVolume,
+  peerRatings
+) {
+  const weights = {
+    repaymentHistory: 0.4,
+    incomeStability: 0.2,
+    shgParticipation: 0.2,
+    transactionVolume: 0.1,
+    peerRatings: 0.1,
+  };
+
+  const creditScore =
+    weights.repaymentHistory * repHistory +
+    weights.incomeStability * incomeStability +
+    weights.shgParticipation * shgParticipation +
+    weights.transactionVolume * transactionVolume +
+    weights.peerRatings * peerRatings;
+
+  return creditScore;
+}
+
+function calculateInterestRate(creditScore, loanTermMonths) {
+  const baseRate = 5;
+
+  const riskFactor = (100 - creditScore) / 100;
+
+  const creditScoreFactor = (creditScore / 850) * 2;
+
+  let loanTermFactor = 0;
+  if (loanTermMonths > 6 && loanTermMonths <= 12) {
+    loanTermFactor = 1;
+  } else if (loanTermMonths > 12) {
+    loanTermFactor = 2;
+  }
+
+  const interestRate =
+    baseRate + riskFactor - creditScoreFactor + loanTermFactor;
+
+  return interestRate;
+}
+
 const GetProfile = ({ state }) => {
   const [profile, setProfile] = useState({
     address: "",
