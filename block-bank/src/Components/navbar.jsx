@@ -40,7 +40,7 @@ const Navbar = () => {
             Get Loan
           </Link>
           <Link className="hover:text-gray-200 transition-colors">
-            Your Wallet
+            Deposit
           </Link>
           <Link className="hover:text-gray-200 transition-colors">
             Review Credit Score
